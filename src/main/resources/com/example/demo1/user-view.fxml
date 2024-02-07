@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UserController">
+    <children>
+        <VBox layoutX="14.0" layoutY="14.0" prefHeight="478.0" prefWidth="706.0">
+            <children>
+                <MenuBar>
+                    <menus>
+                        <Menu fx:id="menuFile" mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#close" text="Close" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Edit">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <TabPane prefHeight="454.0" prefWidth="706.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="New Task">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Button layoutX="301.0" layoutY="151.0" mnemonicParsing="false" onAction="#btnPulsar" text="Pulsar" />
+                                        <TextField fx:id="txtDatos" layoutX="48.0" layoutY="75.0" prefHeight="25.0" prefWidth="253.0" />
+                                        <DatePicker fx:id="dpFecha" layoutX="350.0" layoutY="75.0" />
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="View Task">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TableView fx:id="table" layoutX="40.0" layoutY="23.0" prefHeight="200.0" prefWidth="296.0">
+                                            <columns>
+                                                <TableColumn fx:id="name" prefWidth="114.39999008178711" text="Name" />
+                                                <TableColumn fx:id="surname" prefWidth="91.0" text="Surname" />
+                                                <TableColumn fx:id="age" minWidth="0.0" prefWidth="87.0" text="Age" />
+                                            </columns>
+                                        </TableView>
+                                        <Button fx:id="btnDatos" layoutX="153.0" layoutY="246.0" mnemonicParsing="false" onAction="#btnTraerDatos" prefHeight="35.0" prefWidth="73.0" text="Datos" />
+                                        <TextField fx:id="txtName" layoutX="407.0" layoutY="33.0" prefHeight="25.0" prefWidth="201.0" promptText="Name" />
+                                        <TextField fx:id="txtSurname" layoutX="408.0" layoutY="80.0" prefHeight="25.0" prefWidth="201.0" promptText="Surname" />
+                                        <TextField fx:id="txtAge" layoutX="408.0" layoutY="128.0" prefHeight="25.0" prefWidth="200.0" promptText="Age" />
+                                        <Button layoutX="408.0" layoutY="176.0" mnemonicParsing="false" onAction="#btnCrearDatos" text="New Person" />
+                                    </children></AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </VBox>
+    </children>
 </AnchorPane>
