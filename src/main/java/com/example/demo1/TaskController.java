@@ -6,8 +6,10 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -36,14 +38,26 @@ public class TaskController {
 
     @FXML
     public void initialize(){
-        createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue()
-                .getCreate_date()));
+        createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
         deadLineColumn.setCellValueFactory(cell->cell.getValue().getDeadline());
         titleColumn.setCellValueFactory(cell->new SimpleStringProperty(cell.getValue().getTitle()));
         statusColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getStatus()));
-        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),
-                LocalDate.now(),false));
-        tableTask.setItems(taskObservableList);
+        //esto ya es con algo añadido
+//        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),LocalDate.now(),false));
+//        tableTask.setItems(taskObservableList);
+
+
+        tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+//                System.out.println("fila clicada");
+                if (mouseEvent.getClickCount()==1){
+                    Task task=(Task) tableTask.getSelectionModel().getSelectedItem();
+                    System.out.println(task.getTitle());
+                }
+
+            }
+        });
     }
 
     public TaskController() {
