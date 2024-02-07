@@ -4,21 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97cf2825-ade8-4197-84b8-c555e80bad9c" name="Changes" comment="Proyecto FX">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/task-view.fxml" afterDir="false" />
+    <list default="true" id="97cf2825-ade8-4197-84b8-c555e80bad9c" name="Changes" comment="Añadir tareas ventana (y código: TaskController, task-view,task (clase)).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/Persona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/login-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/menu-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/menu-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/demo1/user-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/demo1/user-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo1/TaskController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +23,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -79,10 +70,20 @@
       <option name="presentableId" value="Default" />
       <updated>1706894848564</updated>
     </task>
+    <task id="LOCAL-00001" summary="Añadir tareas ventana (y código: TaskController, task-view,task (clase)).">
+      <option name="closed" value="true" />
+      <created>1707329438020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1707329438020</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Proyecto FX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Proyecto FX" />
+    <MESSAGE value="Añadir tareas ventana (y código: TaskController, task-view,task (clase))." />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadir tareas ventana (y código: TaskController, task-view,task (clase))." />
   </component>
 </project>

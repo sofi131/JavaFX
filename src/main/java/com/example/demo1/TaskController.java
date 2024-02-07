@@ -36,11 +36,13 @@ public class TaskController {
 
     @FXML
     public void initialize(){
-        createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
+        createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue()
+                .getCreate_date()));
         deadLineColumn.setCellValueFactory(cell->cell.getValue().getDeadline());
         titleColumn.setCellValueFactory(cell->new SimpleStringProperty(cell.getValue().getTitle()));
         statusColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getStatus()));
-        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),LocalDate.now(),false));
+        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),
+                LocalDate.now(),false));
         tableTask.setItems(taskObservableList);
     }
 
