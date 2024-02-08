@@ -22,7 +22,8 @@
         <TextField fx:id="txtTitle" layoutX="500.0" layoutY="119.0" prefHeight="26.0" prefWidth="200.0" promptText="Title" />
         <TextArea fx:id="txtDescription" layoutX="500.0" layoutY="162.0" prefHeight="200.0" prefWidth="200.0" promptText="Description" />
         <DatePicker fx:id="dpdeadLine" layoutX="500.0" layoutY="379.0" prefHeight="26.0" prefWidth="200.0" promptText="DeadLine" />
-        <Button layoutX="500.0" layoutY="470.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="26.0" prefWidth="200.0" text="Add" />
+        <Button fx:id="btnAdd" layoutX="500.0" layoutY="470.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="26.0" prefWidth="200.0" text="Add" />
       <CheckBox fx:id="ckStatus" layoutX="500.0" layoutY="428.0" mnemonicParsing="false" text="Status" />
+      <Button fx:id="btnEdit" layoutX="502.0" layoutY="512.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="25.0" prefWidth="200.0" text="Edit" visible="false" />
     </children>
 </AnchorPane>

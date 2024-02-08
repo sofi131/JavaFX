@@ -34,7 +34,11 @@ public class TaskController {
     protected DatePicker dpdeadLine;
     @FXML
     protected CheckBox ckStatus;
-
+    //botones
+    @FXML
+    protected Button btnEdit;
+    @FXML
+    protected Button btnAdd;
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
 
     @FXML
@@ -68,6 +72,11 @@ public class TaskController {
                 txtDescription.setText(task.getDescription());
                 dpdeadLine.setValue(task.deadline());
                 ckStatus.setSelected(task.getStatus());
+                //visibilidad de los botones a la hora de clicar
+                btnEdit.setVisible(true);
+                btnAdd.setVisible(false);
+                //para ver que funciona --> no se puede editar el campo
+                txtTitle.setDisable(true);
             }
         });
     }
@@ -90,5 +99,33 @@ public class TaskController {
         txtDescription.clear();
         dpdeadLine.setValue(null);
 
+    }
+
+    public void btnEditTask(ActionEvent actionEvent) {
+        //vamos a buscar la tarea por título de momento mientras no tenga id
+        String title = txtTitle.getText();
+        for (Task task : taskObservableList) {
+            if (task.getTitle().equals(title)) {
+                task.setDescription(txtDescription.getText());
+                //devuelve true o false con isSelected
+                task.setStatus(ckStatus.isSelected());
+                task.setDeadline(dpdeadLine.getValue());
+                break;
+                //un break y que se refresque (el clear) y dejar el menú para crear tareas -> el Add
+            }
+        }
+        // Actualizar la tabla
+        tableTask.refresh();
+        //Dejar formulario para crear tareas
+        btnEdit.setVisible(false);
+        btnAdd.setVisible(true);
+        //para ver que funciona --> no se puede editar el campo
+        txtTitle.setDisable(false);
+        //para dejarlo antes como estaba
+        txtTitle.setText("");
+        txtDescription.setText("");
+        dpdeadLine.setValue(null);
+        ckStatus.setSelected(false);
+//limpiado - usuario la opción que vuelva a la vista - un botón de cancelar al lado de editar
     }
 }
