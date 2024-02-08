@@ -40,7 +40,11 @@ public class Task {
     }
 //devuelve object property
     public SimpleObjectProperty  getDeadline() {
-        return new SimpleObjectProperty<>(deadline);
+        return new SimpleObjectProperty(deadline);
+    }
+    //código espagueti (??)
+    public LocalDate deadline(){
+        return deadline;
     }
 
     public void setDeadline(LocalDate deadline) {
@@ -61,5 +65,16 @@ public class Task {
         this.create_date = create_date;
         this.deadline = deadline;
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", create_date=" + create_date +
+                ", deadline=" + deadline +
+                ", status=" + status +
+                '}';
     }
 }

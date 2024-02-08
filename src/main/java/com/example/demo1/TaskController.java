@@ -32,13 +32,15 @@ public class TaskController {
     protected TextArea txtDescription;
     @FXML
     protected DatePicker dpdeadLine;
-
+    @FXML
+    protected CheckBox ckStatus;
 
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
 
     @FXML
     public void initialize(){
         createDateColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getCreate_date()));
+        //aquí error
         deadLineColumn.setCellValueFactory(cell->cell.getValue().getDeadline());
         titleColumn.setCellValueFactory(cell->new SimpleStringProperty(cell.getValue().getTitle()));
         statusColumn.setCellValueFactory(cell->new SimpleObjectProperty<>(cell.getValue().getStatus()));
@@ -46,20 +48,29 @@ public class TaskController {
 //        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),LocalDate.now(),false));
 //        tableTask.setItems(taskObservableList);
 
-
-        tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-//                System.out.println("fila clicada");
-                if (mouseEvent.getClickCount()==1){
-                    Task task=(Task) tableTask.getSelectionModel().getSelectedItem();
-                    System.out.println(task.getTitle());
-                }
-
+        //clic pa coger
+//        tableTask.setOnMouseClicked(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+////                System.out.println("fila clicada");
+//                if (mouseEvent.getClickCount()==1){
+//                    Task task=(Task) tableTask.getSelectionModel().getSelectedItem();
+//                    System.out.println(task.getTitle());
+//                }
+//
+//            }
+//        });
+        //otra manera de hacer el código de arriba
+        tableTask.setOnMouseClicked(e->{
+            if(e.getClickCount()==1){
+                Task task=(Task) tableTask.getSelectionModel().getSelectedItem();
+                txtTitle.setText(task.getTitle());
+                txtDescription.setText(task.getDescription());
+                dpdeadLine.setValue(task.deadline());
+                ckStatus.setSelected(task.getStatus());
             }
         });
     }
-
     public TaskController() {
     //esto era para probar
     //        taskObservableList.addAll(new Task("tarea1","algo",LocalDate.now(),false));
