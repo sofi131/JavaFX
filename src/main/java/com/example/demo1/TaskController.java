@@ -39,6 +39,8 @@ public class TaskController {
     protected Button btnEdit;
     @FXML
     protected Button btnAdd;
+    @FXML
+    protected Button btnCancel;
     private ObservableList<Task> taskObservableList= FXCollections.observableArrayList();
 
     @FXML
@@ -75,6 +77,7 @@ public class TaskController {
                 //visibilidad de los botones a la hora de clicar
                 btnEdit.setVisible(true);
                 btnAdd.setVisible(false);
+                btnCancel.setVisible(true); // Mostrar el botón de cancelar
                 //para ver que funciona --> no se puede editar el campo
                 txtTitle.setDisable(true);
             }
@@ -127,5 +130,19 @@ public class TaskController {
         dpdeadLine.setValue(null);
         ckStatus.setSelected(false);
 //limpiado - usuario la opción que vuelva a la vista - un botón de cancelar al lado de editar
+    }
+
+    public void btnCancelTask(ActionEvent actionEvent) {
+        btnEdit.setVisible(false);
+        btnAdd.setVisible(true);
+        //para ver que funciona --> no se puede editar el campo
+        txtTitle.setDisable(false);
+        //para dejarlo antes como estaba
+        txtTitle.setText("");
+        txtDescription.setText("");
+        dpdeadLine.setValue(null);
+        ckStatus.setSelected(false);
+        //cancelar
+        btnCancel.setVisible(false);
     }
 }
