@@ -24,7 +24,8 @@
         <DatePicker fx:id="dpdeadLine" layoutX="500.0" layoutY="379.0" prefHeight="26.0" prefWidth="200.0" promptText="DeadLine" />
         <Button fx:id="btnAdd" layoutX="500.0" layoutY="470.0" mnemonicParsing="false" onAction="#btnAddTask" prefHeight="26.0" prefWidth="200.0" text="Add" />
       <CheckBox fx:id="ckStatus" layoutX="500.0" layoutY="428.0" mnemonicParsing="false" text="Status" />
-      <Button fx:id="btnEdit" layoutX="502.0" layoutY="512.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="25.0" prefWidth="200.0" text="Edit" visible="false" />
-      <Button fx:id="btnCancel" layoutX="500.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnCancelTask" prefHeight="25.0" prefWidth="200.0" text="Cancelar" visible="false" />
+      <Button fx:id="btnEdit" layoutX="500.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnEditTask" prefHeight="25.0" prefWidth="86.0" text="Edit" visible="false" />
+      <Button fx:id="btnCancel" layoutX="614.0" layoutY="471.0" mnemonicParsing="false" onAction="#btnCancelTask" prefHeight="25.0" prefWidth="86.0" text="Cancelar" visible="false" />
+      <Button fx:id="btnDelete" layoutX="501.0" layoutY="517.0" mnemonicParsing="false" onAction="#btnDeleteTask" prefHeight="25.0" prefWidth="200.0" text="Delete" />
     </children>
 </AnchorPane>

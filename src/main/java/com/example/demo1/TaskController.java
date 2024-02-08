@@ -79,7 +79,8 @@ public class TaskController {
                 btnAdd.setVisible(false);
                 btnCancel.setVisible(true); // Mostrar el botón de cancelar
                 //para ver que funciona --> no se puede editar el campo
-                txtTitle.setDisable(true);
+                //ahora va a ser editable
+//                txtTitle.setDisable(true);
             }
         });
     }
@@ -106,30 +107,16 @@ public class TaskController {
 
     public void btnEditTask(ActionEvent actionEvent) {
         //vamos a buscar la tarea por título de momento mientras no tenga id
-        String title = txtTitle.getText();
-        for (Task task : taskObservableList) {
-            if (task.getTitle().equals(title)) {
-                task.setDescription(txtDescription.getText());
-                //devuelve true o false con isSelected
-                task.setStatus(ckStatus.isSelected());
-                task.setDeadline(dpdeadLine.getValue());
-                break;
-                //un break y que se refresque (el clear) y dejar el menú para crear tareas -> el Add
-            }
-        }
-        // Actualizar la tabla
+//        String title = txtTitle.getText();
+        //devuelve el objeto seleccionado y lo castea (cuando hacemos task
+        Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
+        task.setTitle(txtTitle.getText());
+        task.setDescription(txtDescription.getText());
+        task.setStatus(ckStatus.isSelected());
+        task.setDeadline(dpdeadLine.getValue());
         tableTask.refresh();
-        //Dejar formulario para crear tareas
-        btnEdit.setVisible(false);
-        btnAdd.setVisible(true);
-        //para ver que funciona --> no se puede editar el campo
-        txtTitle.setDisable(false);
-        //para dejarlo antes como estaba
-        txtTitle.setText("");
-        txtDescription.setText("");
-        dpdeadLine.setValue(null);
-        ckStatus.setSelected(false);
-//limpiado - usuario la opción que vuelva a la vista - un botón de cancelar al lado de editar
+//Dejar forumulario para crear tareas
+        btnCancelTask(null);
     }
 
     public void btnCancelTask(ActionEvent actionEvent) {
@@ -144,5 +131,13 @@ public class TaskController {
         ckStatus.setSelected(false);
         //cancelar
         btnCancel.setVisible(false);
+    }
+//botón de borrar
+    public void btnDeleteTask(ActionEvent actionEvent) {
+        //devuelve el objeto seleccionado y lo castea (cuando hacemos task
+        Task task = (Task) tableTask.getSelectionModel().getSelectedItem();
+        taskObservableList.remove(task);
+        tableTask.refresh();
+        btnCancelTask(null);
     }
 }
